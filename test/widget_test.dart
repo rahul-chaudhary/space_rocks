@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:space_rocks/main.dart';
+import 'package:space_rocks/my_app.dart' show MyApp;
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
