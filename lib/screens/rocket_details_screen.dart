@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/rocket_model.dart';
+import '../utils/helpers/db_print.dart';
+import '../utils/helpers/lauch_url.dart';
 
 class RocketDetailScreen extends StatelessWidget {
   final Rocket rocket;
@@ -218,7 +220,7 @@ class RocketDetailScreen extends StatelessWidget {
                                         const Text('Height'),
                                         const SizedBox(height: 4),
                                         Text(
-                                          _metersToFeetInches(rocket.diameter.meters),
+                                          '${rocket.height.meters}m\n(${rocket.height.feet}ft)',
                                           style: const TextStyle(fontWeight: FontWeight.bold),
                                           textAlign: TextAlign.center,
                                         ),
@@ -233,7 +235,7 @@ class RocketDetailScreen extends StatelessWidget {
                                         const Text('Diameter'),
                                         const SizedBox(height: 4),
                                         Text(
-                                          _metersToFeetInches(rocket.diameter.meters),
+                                          '${rocket.diameter.meters}m\n(${rocket.diameter.feet}ft)',
                                           style: const TextStyle(fontWeight: FontWeight.bold),
                                           textAlign: TextAlign.center,
                                         ),
@@ -271,7 +273,7 @@ class RocketDetailScreen extends StatelessWidget {
                       // Wikipedia Link
                       if (rocket.wikipedia.isNotEmpty)
                         ElevatedButton.icon(
-                          onPressed: () => _launchUrl(rocket.wikipedia),
+                          onPressed: () async => await urlLauncher(rocket.wikipedia, context),
                           icon: const Icon(Icons.language),
                           label: const Text('View on Wikipedia'),
                           style: ElevatedButton.styleFrom(
@@ -296,18 +298,14 @@ class RocketDetailScreen extends StatelessWidget {
     );
   }
 
-  String _metersToFeetInches(double meters) {
-    double feet = meters * 3.28084;
-    int fullFeet = feet.floor();
-    double inches = (feet - fullFeet) * 12;
-    return '$fullFeet\' ${inches.round}"';
-  }
+  // String _metersToFeetInches(double meters) {
+  //   dbPrint('meters: $meters');
+  //   double feet = meters * 3.28084;
+  //   int fullFeet = feet.floor();
+  //   double inches = (feet - fullFeet) * 12;
+  //   return '$fullFeet\' ${inches.round}"';
+  //   return inches.toString();
+  // }
 
-  Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
+
 }
