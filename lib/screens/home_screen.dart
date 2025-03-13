@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:space_rocks/models/rocket_model.dart';
 import 'package:space_rocks/screens/rocket_details_screen.dart';
 import 'package:space_rocks/services/api_services.dart';
+import '../utils/constants/app_assets.dart';
 
 class RocketListScreen extends StatefulWidget {
   const RocketListScreen({super.key});
@@ -24,18 +25,18 @@ class _RocketListScreenState extends State<RocketListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rockets Explorer',
-            style: TextStyle(fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.blueGrey[800],
+        title: const Text('Rockets Explorer🚀',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white
+            )),
+        backgroundColor: Color(0xff0c2336),
         elevation: 0,
       ),
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.blueGrey[800]!, Colors.blueGrey[600]!],
-          ),
+          color: Colors.white10,
+          image: DecorationImage(image: AssetImage(AppImages.spaceBG), fit: BoxFit.cover),
         ),
         child: FutureBuilder<RocketList>(
           future: _rocketsFuture,
