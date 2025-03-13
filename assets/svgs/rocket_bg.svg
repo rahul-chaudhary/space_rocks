@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="100%" height="100%" fill="#0f172a"/>
+  
+  <!-- Rocket Cluster -->
+  <text x="50" y="80" font-size="24" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" transform="rotate(15 50 80)">🚀</text>
+  <text x="120" y="200" font-size="32" fill="#f472b6" transform="rotate(-10 120 200)">🚀</text>
+  <text x="250" y="150" font-size="28" fill="#60a5fa" transform="rotate(25 250 150)">🚀</text>
+  <text x="400" y="300" font-size="40" fill="#ffffff" transform="rotate(-15 400 300)">🚀</text>
+  <text x="600" y="100" font-size="20" fill="#34d399" transform="rotate(5 600 100)">🚀</text>
+  <text x="700" y="400" font-size="35" fill="#fbbf24" transform="rotate(-20 700 400)">🚀</text>
+  <text x="100" y="500" font-size="30" fill="#ffffff" transform="rotate(10 100 500)">🚀</text>
+  <text x="300" y="450" font-size="25" fill="#60a5fa" transform="rotate(30 300 450)">🚀</text>
+  <text x="500" y="550" font-size="38" fill="#f472b6" transform="rotate(-25 500 550)">🚀</text>
+  <text x="200" y="350" font-size="22" fill="#34d399" transform="rotate(-5 200 350)">🚀</text>
+  
+  <!-- Add more rockets by duplicating the text elements above with different coordinates -->
+</svg>
