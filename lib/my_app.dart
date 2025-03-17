@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:space_rocks/screens/home_screen.dart';
+import 'package:space_rocks/screens/rocket_details_screen.dart';
 import 'package:space_rocks/utils/constants/app_routes.dart';
+
+import 'models/rocket_model.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,9 +15,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: AppRoutes.homeScreen,
+      initialRoute: AppRoutes.rocketsListScreen,
       routes: {
-        AppRoutes.homeScreen: (context) => const HomeScreen(),
+        AppRoutes.rocketsListScreen: (context) => const RocketListScreen(),
       },
     );
   }
